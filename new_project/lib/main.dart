@@ -12,17 +12,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(title: Text('Widgets de conteúdo')),
+        body: Column(
+          children: [
+            Text('Textos',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            Text('Texto com estilo padrão', style: TextStyle(fontSize: 18)),
+            Divider(),
+            Image.network('https://picsum.photos/id/237/200/300'),
+          ],
+        ),
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
@@ -35,26 +45,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-  
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
       appBar: AppBar(
-       
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        
         title: Text(widget.title),
       ),
       body: Center(
-       
         child: Column(
-         
-          mainAxisAlignment: .center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('You have pushed the button this many times:'),
             Text(
