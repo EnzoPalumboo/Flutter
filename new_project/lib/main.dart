@@ -15,13 +15,23 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Widgets de conteúdo')),
+        appBar: AppBar(title: Text('Widgets de conteudo')),
         body: Column(
           children: [
-            Text('Textos',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Text(
+              'Texto',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+            ),
+            Text(
+              'Texto estilizado',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text('Texto com estilo padrão', style: TextStyle(fontSize: 18)),
+
             Divider(),
             Image.network('https://picsum.photos/id/237/200/300'),
           ],
