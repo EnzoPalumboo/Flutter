@@ -33,7 +33,20 @@ class MyApp extends StatelessWidget {
             Text('Texto com estilo padrão', style: TextStyle(fontSize: 18)),
 
             Divider(),
-            Image.network('https://picsum.photos/id/237/200/300'),
+                Text('Imagem',style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),),
+            Image.network(
+              'https://picsum.photos/id/237/200/300'),
+
+               Divider(),
+                Text('Icone',style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),),
           ],
         ),
       ),
