@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_project/widgets/titulo_secao.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,44 +16,45 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Widgets de conteudo')),
+        appBar: AppBar(
+          title: const Text('Widgets de conteudo'),
+        ),
         body: Column(
           children: [
-            Text(
-              'Texto',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
-            ),
+            TituloSecao(titulo: 'Textos'),
+
             Text(
               'Texto estilizado',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Text('Texto com estilo padrão', style: TextStyle(fontSize: 18)),
+
+            Text(
+              'Texto com estilo padrão',
+              style: TextStyle(fontSize: 18),
+            ),
 
             Divider(),
-                Text('Imagem',style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),),
-            Image.network(
-              'https://picsum.photos/id/237/200/300'),
 
-               Divider(),
-                Text('Icone',style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),),
+            TituloSecao(titulo: 'Imagem'),
+
+            Image.network(
+              'https://picsum.photos/id/237/200/300',
+            ),
+
+            Divider(),
+
+            TituloSecao(titulo: 'Icone'),
           ],
         ),
       ),
-    );
-  }
-}
+    ); // ✅ FECHOU MaterialApp
+  } // ✅ FECHOU build
+} // ✅ FECHOU MyApp
+
+// ✅ AGORA SIM pode declarar outra classe
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
