@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Widgets de conteudo'),
         ),
-        body: Column(
+        body: ListView(
+          padding: EdgeInsets.all(16),
           children: [
             TituloSecao(titulo: 'Textos'),
 
@@ -37,24 +38,32 @@ class MyApp extends StatelessWidget {
             ),
 
             Divider(),
-
             TituloSecao(titulo: 'Imagem'),
-
             Image.network(
               'https://picsum.photos/id/237/200/300',
+              height: 200,
             ),
 
             Divider(),
-
             TituloSecao(titulo: 'Icone'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+              Icon(Icons.favorite, color: Colors.red, size: 32),
+              Icon(Icons.star, color: Colors.amber, size: 32),
+              Icon(Icons.settings, color: Colors.blueGrey, size: 32),
+            ],),
+
+            Divider(),
+            TituloSecao(titulo:'Elevated button'),
+            ElevatedButton(onPressed: () {}, child: Text('Clique aqui'),),
+
           ],
         ),
       ),
-    ); // ✅ FECHOU MaterialApp
-  } // ✅ FECHOU build
-} // ✅ FECHOU MyApp
-
-// ✅ AGORA SIM pode declarar outra classe
+    ); 
+  } 
+} 
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
